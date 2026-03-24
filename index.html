@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinebrowse - Movie Catalogue</title>
+
+  <!-- Preconnect and Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">CINEBROWSE</a>
+
+      <nav class="nav-links">
+        <a href="#" class="nav-link active">MOVIES</a>
+        <a href="#" class="nav-link">SERIES</a>
+        <a href="#" class="nav-link">WATCHLIST</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Search Form -->
+        <form id="searchForm" class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search film archives...">
+          <button type="submit" class="search-btn" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Icons -->
+        <button class="icon-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="Profile">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop"
+        alt="Neon City Background" class="hero-image">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-label">SPOTLIGHT PREMIERE</p>
+      <h1 class="hero-title">NEON DRIFT:<br>THE AWAKENING</h1>
+
+      <div class="hero-buttons">
+        <button class="btn btn-primary">WATCH NOW</button>
+        <button class="btn btn-secondary">+ ADD TO LIST</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Controls (Tabs and View Mode) -->
+    <div class="controls-bar">
+      <div class="tabs">
+        <button class="tab-btn active">POPULAR</button>
+        <button class="tab-btn">TOP RATED</button>
+        <button class="tab-btn">UPCOMING</button>
+        <button class="tab-btn">WATCHLIST</button>
+      </div>
+
+      <div class="view-controls">
+        <span class="view-label">VIEW MODE</span>
+        <button class="view-btn active" aria-label="Grid View">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </button>
+        <button class="view-btn" aria-label="List View">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Movies Container -->
+    <div class="movies-grid" id="moviesContainer">
+      <!-- Example Movie Card 1 -->
+      <article class="movie-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1974&auto=format&fit=crop"
+            alt="Chronos Protocol" loading="lazy">
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <h2 class="card-title">CHRONOS PROTOCOL</h2>
+            <div class="card-rating">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>8.9</span>
+            </div>
+          </div>
+          <p class="card-meta">SCI-FI \u2022 2024</p>
+        </div>
+      </article>
+
+      <!-- Example Movie Card 2 -->
+      <article class="movie-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1515634928627-2a4e0dae3ddf?q=80&w=2070&auto=format&fit=crop"
+            alt="Velvet Rain" loading="lazy">
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <h2 class="card-title">VELVET RAIN</h2>
+            <div class="card-rating">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>7.4</span>
+            </div>
+          </div>
+          <p class="card-meta">NOIR DRAMA \u2022 2023</p>
+        </div>
+      </article>
+
+      <!-- Example Movie Card 3 -->
+      <article class="movie-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925&auto=format&fit=crop"
+            alt="The Auteur" loading="lazy">
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <h2 class="card-title">THE AUTEUR</h2>
+            <div class="card-rating">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>9.2</span>
+            </div>
+          </div>
+          <p class="card-meta">BIOGRAPHY \u2022 2024</p>
+        </div>
+      </article>
+
+      <!-- Example Movie Card 4 -->
+      <article class="movie-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop"
+            alt="Etheria" loading="lazy">
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <h2 class="card-title">ETHERIA</h2>
+            <div class="card-rating">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>8.1</span>
+            </div>
+          </div>
+          <p class="card-meta">FANTASY \u2022 2024</p>
+        </div>
+      </article>
+
+      <!-- More cards to fill the UI for visual demo -->
+      <article class="movie-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop"
+            alt="Mars One" loading="lazy">
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <h2 class="card-title">MARS ONE</h2>
+            <div class="card-rating">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>7.9</span>
+            </div>
+          </div>
+          <p class="card-meta">ADVENTURE \u2022 2023</p>
+        </div>
+      </article>
+
+      <article class="movie-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1540552763428-c11df6ae248a?q=80&w=2062&auto=format&fit=crop"
+            alt="Final Act" loading="lazy">
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <h2 class="card-title">FINAL ACT</h2>
+            <div class="card-rating">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>8.5</span>
+            </div>
+          </div>
+          <p class="card-meta">MYSTERY \u2022 2024</p>
+        </div>
+      </article>
+
+      <article class="movie-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1966&auto=format&fit=crop"
+            alt="Shift" loading="lazy">
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <h2 class="card-title">SHIFT</h2>
+            <div class="card-rating">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>6.8</span>
+            </div>
+          </div>
+          <p class="card-meta">ACTION \u2022 2024</p>
+        </div>
+      </article>
+
+      <article class="movie-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=2065&auto=format&fit=crop"
+            alt="The Keep" loading="lazy">
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <h2 class="card-title">THE KEEP</h2>
+            <div class="card-rating">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>8.2</span>
+            </div>
+          </div>
+          <p class="card-meta">HORROR \u2022 2024</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Load More -->
+    <div class="load-more">
+      <button class="btn btn-outline">EXPLORE ARCHIVES</button>
+    </div>
+
+  </main>
+
+  <!-- Modal -->
+  <div id="movieModal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn" aria-label="Close modal">&times;</button>
+
+      <div class="modal-layout">
+        <div class="modal-poster">
+          <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1974&auto=format&fit=crop"
+            alt="Movie Poster">
+        </div>
+        <div class="modal-details">
+          <h2 class="modal-title">CHRONOS PROTOCOL</h2>
+          <div class="modal-meta">
+            <span class="modal-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg> 8.9</span>
+            <span class="modal-year">2024</span>
+            <span class="modal-runtime">124 min</span>
+          </div>
+          <div class="modal-genres">
+            <span class="genre-tag">Sci-Fi</span>
+            <span class="genre-tag">Action</span>
+          </div>
+          <p class="modal-desc">
+            In a dystopian future, a rogue operative uncovers a conspiracy that threatens the fabric of time itself. To
+            save humanity, they must race against the clock crossing dimensions before reality crumbles.
+          </p>
+
+          <div class="modal-cast">
+            <strong>Cast:</strong> <span>John Doe, Jane Smith, Alan Turing</span>
+          </div>
+
+          <div class="modal-actions">
+            <button class="btn btn-primary">Watch Trailer</button>
+            <button class="btn btn-secondary icon-btn-large">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+              </svg>
+              Watchlist
+            </button>
+            <button class="btn btn-secondary icon-btn-large star-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              Rate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="footer-logo">CINEBROWSE</div>
+        <p class="footer-copy">&copy; 2024 CINEBROWSE. ARCHITECTURAL CINEMA.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">PRIVACY</a>
+        <a href="#">TERMS</a>
+        <a href="#">PRESS</a>
+        <a href="#">ARCHIVE</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Rating Modal -->
+  <div id="ratingModal" class="modal">
+    <div class="modal-backdrop" id="ratingBackdrop"></div>
+    <div class="rating-modal-content">
+      <h3 class="rating-title">Rate this Movie</h3>
+      <div class="rating-checkboxes" id="ratingCheckboxes">
+        <label class="rating-label">
+          <input type="radio" name="movie-rating" value="1"> 1
+        </label>
+        <label class="rating-label">
+          <input type="radio" name="movie-rating" value="2"> 2
+        </label>
+        <label class="rating-label">
+          <input type="radio" name="movie-rating" value="3"> 3
+        </label>
+        <label class="rating-label">
+          <input type="radio" name="movie-rating" value="4"> 4
+        </label>
+        <label class="rating-label">
+          <input type="radio" name="movie-rating" value="5"> 5
+        </label>
+      </div>
+      <div class="rating-actions">
+        <button id="cancelRatingBtn" class="btn btn-outline">Cancel</button>
+        <button id="saveRatingBtn" class="btn btn-primary">Save Rating</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
